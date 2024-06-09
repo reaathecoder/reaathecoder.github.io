@@ -318,8 +318,8 @@
                         <a href=""><i class="fa-brands fa-telegram" style="color: #2fcbff; ; font-size: 27px;  "></i></a>
                         <a href=""><i class="fa-solid fa-envelope" style="color: white;  background: blue; padding:5px; border-radius : 5px ;  "></i></a>
                         <a href=""><i class="fa-solid fa-phone" style="color: white;  background: green; padding:5px; border-radius : 5px ;  "></i></a>
-                        <a href=""><img src="src\routes\(diff-nav)\aboutMe\shad.png" alt="" width="25px"></a>                    
-                        <a href=""><img src="src\routes\(diff-nav)\aboutMe\rubika.png" alt="" width="30px"></a>
+                        <a href=""><img src="/shad.png" alt="" width="25px"></a>                    
+                        <a href=""><img src="/rubika.png" alt="" width="30px"></a>
 
                       </div>
 

@@ -60,7 +60,7 @@
 			</ul>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#aboutMe" on:click={handleAnchorClick} >درباره من</a>
+			<a class="nav-link" href="./#aboutMe" on:click={handleAnchorClick} >درباره من</a>
 		  </li>
 		</ul>
 	  </div>
