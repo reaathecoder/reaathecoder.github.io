@@ -137,7 +137,7 @@ function checkBoxes() {
 
 <div class="aboutMe " >
   <div class="picturee pic" class:showw={false}>
-    <img src="src\routes\teacher.png" alt="">
+    <img src="/teacher.png" alt="">
   </div>
 
   <div class="aboutMeText information"  class:showww={false} dir="rtl" id="aboutMe">
@@ -159,13 +159,13 @@ function checkBoxes() {
       
         
       
-      <a href="./aboutMe"><button type="button" class="btn bg-success bishtar" style="border-radius: 5px !important; padding:10px !important; margin-top:20px;   background:#14A44D; color:white;"  >بیشتر بدانید ... </button></a>
+      <a href="\aboutMe"><button type="button" class="btn bg-success bishtar" style="border-radius: 5px !important; padding:10px !important; margin-top:20px;   background:#14A44D; color:white;"  >بیشتر بدانید ... </button></a>
 
   
   </div>
   
   <div class="picture pic" class:showw={false}>
-      <img src="src\routes\teacher.png" alt="">
+      <img src="/teacher.png" alt="">
 
   </div>
 </div>
@@ -437,7 +437,7 @@ function checkBoxes() {
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white" style="text-decoration: none;">درباره من</a>
+              <a href="#" class="text-white" style="text-decoration: none;">درباره من</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -445,7 +445,7 @@ function checkBoxes() {
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white" style="text-decoration: none;">مطالب  آموزشی</a>
+              <a href="#" class="text-white" style="text-decoration: none;">مطالب  آموزشی</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -453,7 +453,7 @@ function checkBoxes() {
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white" style="text-decoration: none;">جایزه ها</a>
+              <a href="#" class="text-white" style="text-decoration: none;">جایزه ها</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -461,7 +461,7 @@ function checkBoxes() {
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white" style="text-decoration: none;">سوالات</a>
+              <a href="#" class="text-white" style="text-decoration: none;">سوالات</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -469,7 +469,7 @@ function checkBoxes() {
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white" style="text-decoration: none;">ارتباط با من</a>
+              <a href="#" class="text-white" style="text-decoration: none;">ارتباط با من</a>
             </h6>
           </div>
           <!-- Grid column -->
