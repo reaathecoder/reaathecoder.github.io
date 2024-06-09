@@ -43,7 +43,7 @@
 			<a class="nav-link active tab-marker" aria-current="page" href="./">خانه</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#">مطالب آموزشی</a>
+			<a class="nav-link" href="/Edu_content">مطالب آموزشی</a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="#">تکنولوژی های آموزشی</a>
