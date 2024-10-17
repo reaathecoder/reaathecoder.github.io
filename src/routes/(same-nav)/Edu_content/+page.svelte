@@ -7,8 +7,8 @@
 
     let collapsed = true; 
     let clicked = false;
-    let short_content = false;
     let obj 
+    let short_content = false; 
 
     console.log(data)
 
@@ -31,12 +31,13 @@ function read_more() {
     
 
     if (commentHeight == scrollCommentHeight) {
-      short_content = true;
-      comment.nextElementSibling.style.display = 'none'; // hide read more button
+      console.log(comment)
+      short_content = true
     } else {
       
     }
   });
+
 
   readmore.forEach(function(button) {
     button.addEventListener('click', function(event) {
@@ -147,8 +148,11 @@ function setCookie(name, value, days) {
 
                         <p class="m-top-sm m-bottom-sm text-bottom" class:active={short_content?true:false}>{post.content}</p>
 
+                         
                           
                           <div class="footer-panel read_more" >
+
+                            
                             {#if collapsed}
                                   <a href="#" style="width:90px; "  >Read More</a>
                                   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -183,30 +187,39 @@ function setCookie(name, value, days) {
                                 </form>
 
 
+
                             {:else}
                                   <a href="#"  style="width:90px;"  >Read Less</a>
                                   <!-- svelte-ignore a11y-click-events-have-key-events -->
                                   <!-- svelte-ignore a11y-no-static-element-interactions -->
                                   <form method="post" action="?/update" >                                  <span class="post-like text-muted tooltip-test" data-toggle="tooltip" data-original-title="I like this post!"
-                                  on:click={()=>{
-                                        if(!clicked){
-                                    post.likes += 1;
-                                    clicked = true;
-                                    }else{
-                                      post.likes -= 1;
-                                      clicked = false;
-                                    }
-
-                                  }}>
-                                    <i class="fa fa-heart" ></i> <span class="like-count" >{post.likes}</span>
-                                  </span>    
-                                </form>
+                                    on:click={()=>{
+                                          if(!clicked){
+                                      post.likes += 1;
+                                      clicked = true;
+                                      }else{
+                                        post.likes -= 1;
+                                        clicked = false;
+                                      }
+  
+                                    }}>
+                                    
+                                      <i class="fa fa-heart" ></i> <span class="like-count" >{post.likes}</span>
+                                    </span>    
+                                  </form>
                             {/if}
                           </div>
 
+
+
+
                         </div>
                         
+                        
                     </div>
+
+                    
+                    
                     
                     
                   <div class="nav tag-cloud">
@@ -217,34 +230,8 @@ function setCookie(name, value, days) {
                     {/each}
                     
                 </div>
-                {#if short_content}
+                
 
-                <form method="post" action="?/update" >
-                          <div style="width: 100%;">
-                          <!-- svelte-ignore a11y-click-events-have-key-events -->
-                          <!-- svelte-ignore a11y-no-static-element-interactions -->
-                          <span class="post-like text-muted tooltip-test" data-toggle="tooltip" data-original-title="I like this post!" 
-                          style="float:right; "
-                          on:click={() => {
-                            if (!clicked) {
-                              // i want to be able to add like permanently but now after refresh it will be gone
-                              post.likes += 1;
-                              clicked = true;
-                            } else {
-                              post.likes -= 1;
-                              clicked = false;
-                            }
-                          }}
-                          aria-label="Like"
-                        >
-                          
-                          <i class="fa fa-heart"></i> <span class="like-count">{post.likes}</span>
-                        
-                        </span>
-
-                      </div>
-                </form>
-                          {/if}
             </div>  
             
 

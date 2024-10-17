@@ -23,5 +23,5 @@
     </style>
     
     
-    <input type="text" placeholder="   Add Categories..." autocomplete="off" id="searchInput" bind:value={inputValue} on:input>
+    <input type="text" placeholder="  Categories..." autocomplete="off" id="searchInput" bind:value={inputValue} on:input>
     <span id="search-icon">🔍</span>

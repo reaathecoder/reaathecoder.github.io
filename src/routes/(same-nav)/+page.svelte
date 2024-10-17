@@ -79,15 +79,15 @@ function checkBoxes() {
   
   <div class="carousel-inner gallary-slider" >
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2023/10/28/10/31/child-8347081_1280.jpg" class="d-block w-100" alt="...">
+      <img src="slider1.webp" class="d-block w-100" alt="...">
       
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2017/02/09/16/59/college-student-2052868_1280.jpg" class="d-block w-100" alt="...">
+      <img src="slider2.webp" class="d-block w-100" alt="...">
   
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2016/08/23/15/01/board-1614646_1280.jpg" class="d-block w-100" alt="...">
+      <img src="slider3.jpg" class="d-block w-100" alt="...">
       
    
   </div>
@@ -259,7 +259,7 @@ function checkBoxes() {
 
     <div class="col box column" >
         <div class="card">
-          <img src="https://images.pexels.com/photos/1181233/pexels-photo-1181233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8xinF_6yFsv06qi-eULP4KEeeHT8XNpXgg&s" class="card-img-top" alt="...">
           <div class="card-body" dir="rtl">
             <h5 class="card-title">تجربیات من</h5>
             <p class="card-text">در این قسمت من سعی کردم تجربیاتم رو با شما با اشتراک بذارم  </p>
@@ -268,7 +268,7 @@ function checkBoxes() {
       </div>
       <div class="col box column">
         <div class="card">
-          <img src="https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+          <img src="laptop.jpg" class="card-img-top" alt="..." >
           <div class="card-body" dir="rtl">
             <h5 class="card-title">وبینار ها</h5>
             <p class="card-text">برای مشاهده ی وبینار های اموزشی روی این قسمت کلیک کنید  </p>
@@ -277,7 +277,7 @@ function checkBoxes() {
       </div>
       <div class="col box column" class:show={false}>
         <div class="card">
-          <img src="https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+          <img src="item1.webp" class="card-img-top" alt="...">
           <div class="card-body" dir="rtl">
             <h5 class="card-title">کتب آموزشی</h5>
             <p class="card-text">این بخش درباره کتب آموزشی در حوزه شیوه های تدریس است</p>
@@ -286,7 +286,7 @@ function checkBoxes() {
       </div>
       <div class="col box last-item column">
         <div class="card ">
-          <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." >
+          <img src="item4.webp" class="card-img-top" alt="..." >
           <div class="card-body" dir="rtl">
             <h5 class="card-title">نظرسنجی</h5>
             <p class="card-text">با شرکت در نظرسنجی بمن کمک کنید تا مطالب مفید تری بارگزاری کنم </p>
@@ -302,7 +302,7 @@ function checkBoxes() {
 <div class="row row-cols-1 row-cols-md-2 g-4  for-smaller-screen" style="width: 50%; margin: 0 auto; display:none; " >
   <div class="col" style="width: 50%;">
     <div class="card" >
-      <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+      <img src="item4.webp" class="card-img-top" alt="...">
       <div class="card-body" dir="rtl">
         <h5 class="card-title">تجربیات من</h5>
         <p class="card-text">در این قسمت من سعی کردم تجربیاتم رو با شما با اشتراک بذارم  </p>
@@ -311,7 +311,7 @@ function checkBoxes() {
   </div>
   <div class="col" style="width: 50%;">
     <div class="card" >
-      <img src="https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+      <img src="item1.webp" class="card-img-top" alt="...">
       <div class="card-body" dir="rtl">
         <h5 class="card-title">وبینار ها</h5>
         <p class="card-text">برای مشاهده ی وبینار های اموزشی روی این قسمت کلیک کنید  </p>
@@ -320,7 +320,7 @@ function checkBoxes() {
   </div>
   <div class="col" style="width: 50%;">
     <div class="card" >
-      <img src="https://images.pexels.com/photos/1181233/pexels-photo-1181233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8xinF_6yFsv06qi-eULP4KEeeHT8XNpXgg&s" class="card-img-top" alt="...">
       <div class="card-body" dir="rtl">
         <h5 class="card-title">کتب آموزشی</h5>
         <p class="card-text">این بخش درباره کتب آموزشی در حوزه شیوه های تدریس است</p>
@@ -329,7 +329,7 @@ function checkBoxes() {
   </div>
   <div class="col" style="width: 50%;">
     <div class="card" >
-      <img src="https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+      <img src="laptop.jpg" class="card-img-top" alt="...">
       <div class="card-body" dir="rtl">
         <h5 class="card-title">نظرسنجی</h5>
         <p class="card-text">با شرکت در نظرسنجی بمن کمک کنید تا مطالب مفید تری بارگزاری کنم </p>
@@ -339,7 +339,7 @@ function checkBoxes() {
 </div>
 
 
-<div class=" container-fluid last_div" >
+<div class=" container-fluid last_div"  >
   <div class="some-text information"   dir="rtl" >
     <h3>مدرسه من</h3>
     <p style="text-align:center" >
@@ -379,7 +379,7 @@ function checkBoxes() {
                           <div class="tour-desc bg-white">
                               <div class="tour-text color-grey-3 text-center" dir="rtl" >"من واقعا از این کلاس لذت می‌برم! معلممون واقعا با انگیزه و خوش‌فکره و درس‌ها خیلی جذاب ارائه می‌شه. خیلی ممنون از این تجربه عالی!"
                                </div>
-                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg" alt=""></div>
+                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="pic2.webp" alt=""></div>
                               <div class="link-name d-flex justify-content-center">کوثر خاکی</div>
                               <div class="link-position d-flex justify-content-center">دانش آموز</div>
                           </div>
@@ -395,7 +395,7 @@ function checkBoxes() {
 
 
                               </div>
-                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="pic2.webp" alt=""></div>
                               <div class="link-name d-flex justify-content-center"> نازنین منطقی</div>
                               <div class="link-position d-flex justify-content-center">دانش آموز</div>
                           </div>
@@ -414,7 +414,7 @@ function checkBoxes() {
 
 
                               </div>
-                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/4946604/pexels-photo-4946604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                              <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="pic1.webp" alt=""></div>
                               <div class="link-name d-flex justify-content-center">شادی غمگین</div>
                               <div class="link-position d-flex justify-content-center">دانش آموز</div>
                           </div>
@@ -479,6 +479,7 @@ function checkBoxes() {
       <!-- Section: Links -->
 
       <hr class="my-5" />
+      
 
       <!-- Section: Text -->
       <section class="mb-5">
@@ -609,9 +610,11 @@ function checkBoxes() {
 .big{
 
   width: 55%;
-  background-color: rgb(5, 13, 74);
-  background-image: url("https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://media.fardayeeghtesad.com/d/2023/05/03/4/20438.jpg?ts=1683100855000");
   background-position: 10px;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  
   overflow: hidden;
 
 
@@ -635,13 +638,13 @@ function checkBoxes() {
 .half-img{
   height: 50%;
   background-color: #0EDC8D;
-  background-image: url("https://images.pexels.com/photos/6281994/pexels-photo-6281994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1nPxeEln4xXsfvJxBxbFzNstV5jaVRULiPw&s");
   background-size: 100% 100%;
   
 }
 
 .half_{
-  background-image: url("https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNldbilgAlSuKMZnxWn-cOwQvVGyNjiFWEIQ&s");
   height: 50%;
   background-size: 100% 100%;
   background-color: #1b3d23;
@@ -658,11 +661,12 @@ function checkBoxes() {
 .last_div{
   display: flex;
   padding: 30px;
+  
   gap: 30px;
   height: 450px;
   background-color: #EBEEFF;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
   .our-achievement .single-achievement h4{
@@ -783,7 +787,7 @@ box-shadow: 0 8px 16px 0 rgba(8, 108, 45, 0.2);
 
 .our-achievement {
   position: relative;
-  background-image: url("https://demo.graygrids.com/themes/edugrids/assets/images/achievement/achievement-bg.jpg");
+  background-image: url("achievement-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

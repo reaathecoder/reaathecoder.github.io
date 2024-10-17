@@ -55,7 +55,12 @@
                         Choose which page you want to manage from the sidebar on the left
                     </h6>
 
-                    <button class="btn btn-success" style="margin: 40px; padding: 10px 40px 10px 40px; border-radius :30px; " >Start</button>
+                    <button class="btn btn-success" style="margin: 40px; padding: 10px 40px 10px 40px; border-radius :30px; "
+                    
+                    on:click={
+                       ()=>{ OpenPage(1)}
+                    }
+                    >Start</button>
             </div>
         </div>  
     {:else}

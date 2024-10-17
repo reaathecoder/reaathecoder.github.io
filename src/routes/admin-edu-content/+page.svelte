@@ -3,6 +3,7 @@
   import Button from './Button.svelte';
   import Input from './Input.svelte';
   import Link from './Link.svelte';
+	import { text } from '@sveltejs/kit';
   export let form;
 
     /** @type {import('./$types').PageData} */
@@ -15,6 +16,8 @@
     let x = 0 ; 
     let group = 1;
     
+
+    console.log(data)
 
 let flavours = [];
 let flavours2 = [];
@@ -55,6 +58,30 @@ const onFileSelectedToChange =(e)=>{
 
 let catsToRemove = []; 
 let post ; 
+
+let startdate
+	let enddate
+
+	$: dateAsDate1 = startdate && new Date(...startdate.split('-'))
+  $: dateAsDate2 = enddate && new Date(...enddate.split('-'))
+
+  let nameOrId = ''
+
+  function truncateString(str, maxLength) {
+    if (str.length > maxLength) {
+        return str.substring(0, maxLength - 3) + '...';
+    }
+    return str;
+}
+let selected = '';
+	
+	function onChange(event) {
+		selected = event.currentTarget.value;
+	}
+
+  
+  
+
 </script>
 
 
@@ -111,6 +138,158 @@ let post ;
   </div>
 
   {/if}
+
+
+
+  <div class="section" style="width:90%; height:auto;   ">
+    
+    <h1>Filter - Find - Delete </h1>
+
+    <div class="container-fluid">
+  <div class="row">
+    <!-- Search Section -->
+    <div class="col-lg-8 col-md-7 col-sm-12 d-flex flex-wrap align-items-center p-0">
+      <input type="search" class="form-control m-4" name="search_" id="Search" placeholder="Name/ID" bind:value={nameOrId} on:input={() => nameOrId} style="height: 76px;"/>
+
+      <input type="date" class="form-control dateInput m-4" bind:value={startdate} />
+
+      <input type="date" class="form-control dateInput m-4" bind:value={enddate} />
+
+        <!-- Dropdown Section -->
+    <div class="dropdown form-control m-4" style="padding:0; margin-top:60px ;  margin-bottom: 60px; margin-left:50px;  height:80px; ">
+                
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div  style="display:flex; width:100%; height:95%;  padding:0;" on:click={() => menuOpen2 = !menuOpen2} {menuOpen2} >	
+        <Input bind:inputValue on:input={handleInput} />	
+        <button type="button" class="addlabButt" style="height: 99% !important; " on:click={()=>
+                                        {
+                                        console.log("clicked", inputValue)
+                                        if (!menuItems.includes(inputValue)){
+                                              menuItems.push(inputValue);
+                                              menuItems = menuItems ; 
+                                          }else{
+                                          console.log("already exists")
+                                          }
+                                        inputValue = ''; 
+                                        filteredItems = []; 
+                                        filteredItems = filteredItems; 
+                                        inputValue = inputValue; 
+                                          
+                                        }
+                                        
+                                      }>+</button>
+        </div>
+
+
+        <div class:show={menuOpen2}  class="dropdown-content" style="margin:0% !important; " >
+          
+        {#if filteredItems.length > 0}
+          {#each filteredItems as item}
+            <div style="width:100%; padding:10px;  display:flex; flex-direction:column;     ">
+          <label style=" width:100%;  " >
+            <input
+              style="margin-right:10px; "
+              type="checkbox"
+              name="items"
+              value={item}
+              bind:group={flavours2}
+            />
+        
+            {item}
+          </label>
+            </div>
+          {/each}
+        {:else}
+          
+          {#each menuItems as item}
+            <div style="width:100%; padding:10px;  display:flex; flex-direction:column;     ">
+          <label style=" width:100%;  " >
+            <input
+              style="margin-right:10px; "
+              type="checkbox"
+              name="items"
+              value={item}
+              bind:group={flavours2}
+            />
+        
+            {item}
+          </label>
+            </div>
+          {/each}
+        {/if}	
+      </div>
+    </div>
+    </div>
+
+  
+  </div>
+</div>
+
+
+ 
+  
+
+   <div>
+  {#each data.edu_contents as edu_post}
+
+  <!--if atlest one of the fields is filled-->
+  {#if nameOrId != "" || startdate || enddate || flavours2.length > 0}
+   
+    {#if 
+      (!startdate || new Date(startdate) <= new Date(edu_post.createdAt)) &&
+      (!enddate || new Date(enddate) >= new Date(edu_post.createdAt)) &&
+      (!nameOrId || edu_post.title.toLowerCase().replace(/ /g, '').includes(nameOrId.toLowerCase().replace(/ /g, ''))) &&
+      (flavours2.length === 0 || edu_post.category.map(cat => cat.name).some(cat => flavours2.includes(cat)))
+    }
+  <table>
+    <tr>
+      <th>
+        <div class="scrollable">
+            <input checked={selected===edu_post.id}  type="radio" name="id" value={edu_post.id}
+            bind:group={selected}
+             on:change={ ()=>{
+              console.log(edu_post.id)
+
+              let id = edu_post.id
+              if (id){
+
+                console.log("id is", {id})
+
+                post = data.edu_contents.find(edu_post => edu_post.id == id);
+                post = post; 
+                console.log(post)
+
+              }
+
+
+
+
+              
+              }} /> 
+            
+            
+      </div>
+    </th>
+    <th><div class="scrollable">{edu_post .title}</div></th>
+    <td><div class="scrollable">{truncateString(edu_post.content,100)}</div></td>
+ 
+    </tr>
+  </table>
+    {/if}
+    {/if}
+  
+
+  {/each}
+  
+</div>
+
+
+  </div>
+
+    
+
+  
 
     <div class=" section add">
         <div style=" width:90%;">
@@ -282,11 +461,23 @@ let post ;
 
 
       <div class="group" style="display: flex; ">
-       <input type="number" name="id" placeholder="ID" class="input" min="1" max="10">
+      {#if post}
+        
+        <input type="number" name="id" placeholder="ID" class="input" min="1" max="10" value={post.id}>
+
+      {:else}
+        
+      <input type="number" name="id" placeholder="ID" class="input" min="1" max="10" >
+
+        
+      {/if}
        <button class="btn btn-success" style="height: 65px; width:100px; border-radius:0px !important; " 
         type="button" on:click={ ()=>{
           let id = document.querySelector('input[name="id"]').value;
           if (id){
+              
+              
+               
                console.log("id" , id)
 
                 post = data.edu_contents.find(post => post.id == id);
@@ -724,7 +915,15 @@ let post ;
      </div>    
      <form action="?/delete" method="POST" enctype="multipart/form-data" >
      <div class="group" style="display: flex; ">
-      <input type="number" name="idToDel" placeholder="ID" class="input" min="1" max="10">
+      {#if post}
+        
+      <input type="number" name="idToDel" placeholder="ID" class="input" min="1" max="10" value={post.id}>
+
+      {:else}
+        
+      <input type="number" name="idToDel" placeholder="ID" class="input" min="1" max="10" >
+    {/if}
+      
       <button class="btn btn-success" style="height: 65px; width:100px; border-radius:0px !important; " 
        type="button" on:click={ ()=>{
 
@@ -734,6 +933,14 @@ let post ;
                post = data.edu_contents.find(post => post.id == id);
                post = post; 
              
+               if (post){
+                  if (post.image.includes('http')) {
+                    group = 1;
+                }
+                else {
+                    group = 2;
+                }
+                };
          }}}>Find</button>
 
      </div>
@@ -766,54 +973,8 @@ let post ;
     </form>
 
       
-    <div>
-      <h2 style="color:rgb(201, 231, 170); margin-top: 30px; ">Table</h2>
-    </div>
-
-      <div class="container tabeldiv">
-    
-        <table class="table table-striped">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">#id</th>
-                <th scope="col">created at</th>
-                <th scope="col">title</th>
-                <th scope="col">link</th>
-                <th scope="col">content</th>
-                <th scope="col">image address</th>
-                <th scope="col">categories</th>
-                <th scope="col">likes</th>
-              </tr>
-              
-            </thead>
-            <tbody>
-        
-            {#each data.edu_contents as post}
-              <tr>
-                <th>
-                  <div class="scrollable">
-                  <form method="post" action="?/delete"  style="border:none; padding:0; margin:0;  ">
-                      <input name="id" type="hidden" value={post.id} />
-                      <button type="submit" style="padding:5px; border:none;   display:flex; justify-content:center; background:transparent;   " class="remove">X</button>
-                  </form>
-                </div>
-                </th>
-                <th><div class="scrollable" >{post.id}</div></th>
-                <td><div class="scrollable">{post.createdAt}</div></td>
-                <td><div class="scrollable">{post.title}</div></td>
-                <td><div class="scrollable">{post.link}</div></td>
-                <td><div class="scrollable">{post.content}</div></td>
-                <td><div class="scrollable">{post.image}</div></td>
-                <td><div class="scrollable">{post.category.map((category) => category.name).join('\n')}</div></td>
-                <td><div class="scrollable">{post.likes}</div></td>
-              </tr>
-            {/each}
-        
-            </tbody>
-        </table>
-      </div>
-    
+   
+     
     </div>
 
 
@@ -852,13 +1013,22 @@ let post ;
           </tbody>
       </table>
     </div>
-                  
+
 </main>
+
 
 
 
 <style>
 
+.dateInput{
+		padding:20px;
+    height:76px;
+		width:400px; 
+		margin:20px; 
+    margin-top:60px ;
+    border: 1px solid #ccc;
+	}
 
 
  td, th {
@@ -873,8 +1043,8 @@ let post ;
     
   }
     th:nth-child(1), td:nth-child(1) { width: 50px; } /* adjust as needed */
-    th:nth-child(2), td:nth-child(2) { width: 70px; } /* adjust as needed */
-    th:nth-child(6), td:nth-child(6) { width: 300px; } /* adjust as needed */
+    th:nth-child(2), td:nth-child(2) { width: 160px; } /* adjust as needed */
+    th:nth-child(6), td:nth-child(6) { width: 100px; } /* adjust as needed */
     th:nth-child(4), td:nth-child(4) { width: 200px; } /* adjust as needed */
     th:nth-child(9), td:nth-child(9) { width: 70px; } /* adjust as needed */
 
@@ -1111,6 +1281,7 @@ let post ;
     border:dotted 1px green; 
     display:flex; 
     justify-content:space-between; 
+    
     padding:10px; 
     color:green;  
     width: 31% !important; 
@@ -1118,4 +1289,8 @@ let post ;
   }
 
 
+iframe{
+  width:100%; 
+  height: 100%;
+}
 </style>
