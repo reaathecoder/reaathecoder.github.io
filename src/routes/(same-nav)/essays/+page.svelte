@@ -22,37 +22,7 @@
         }
     }
 }
-   /* let essays = [
-        {   
-            title : "Green Life" , 
-            text  : "Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains" ,
-            image : "https://heyimreadingcom.files.wordpress.com/2021/06/18490532.jpeg?w=302"
 
-        } , 
-        {
-            title : "To The Beach" , 
-            text  : "Plan your next beach trip with these fabulous destinations" ,
-            image : "https://offtheshelf.b-cdn.net/app/uploads/2015/06/Boy-Snow-Bird.jpg"
-        } ,
-        {
-            title : "Desert Destinations" , 
-            text  : "It's the desert you've always dreamed of" ,
-            image : "https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-
-        } , 
-        {
-            title : "Explore The Galaxy" , 
-            text  : "Seriously, straight up, just blast off into outer space today" ,
-            image : "https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-        },
-        {   
-            title : "Mountain View" , 
-            text  : "Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains" ,
-            image : "https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-
-        } 
-       
-    ]*/
     
 </script>
 
