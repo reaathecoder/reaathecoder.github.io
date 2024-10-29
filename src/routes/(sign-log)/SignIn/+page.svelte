@@ -3,7 +3,11 @@
 
     /** @type {import('./$types').PageData} */
     export let data;
+    
 
+    let checked = false;
+
+    
     
 </script>
 
@@ -28,62 +32,73 @@
 
         <div class="layoutCard">
 
-
+          
 
         </div>
 
         <div class="form container">
-            <form use:enhance method="post" action="?/login">
+           
 
-                <form class="row g-3">
+              <h2 class="text-success" style="margin-bottom: 20px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Sign up</h2>
+
+                <form class="row g-3" use:enhance method="post" action="?/signup">
                     <div class="col-md-6">
                       <label for="inputName" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="inputName" placeholder="Reyhaneh Sharbaf Tabrizi">
+                      <input type="text" class="form-control" id="inputName"  name="name" placeholder="Reyhaneh Sharbaf Tabrizi"  required />
                     </div>
                     <div class="col-md-6">
                       <label for="inputUsername" class="form-label">Username</label>
-                      <input type="text" class="form-control" id="inputUsername" placeholder="reysha06">
+                      <input type="text" class="form-control" id="inputUsername" name="username" placeholder="reysha06" required />
                     </div>
                     <div class="col-12">
                       <label for="inputEmail" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com">
+                      <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@gmail.com" required />
                     </div>
-                    <div class="col-12">
-                      <label for="inputPassword" class="form-label">Password</label>
+                    <div class="col-md-7">
+                      <label for="inputPassword" class="form-label" >Password</label>
                       <div class="input-group mb-3">
-                        <input class="form-control password block  w-full" id="password" type="password" name="password" value="secret!" required />
+                        <input class="form-control password block  w-full" id="password" type="password" name="password"  required />
                         <span class="input-group-text togglePassword" id="" style="width: 40px;" >
-                            <i class="fa-solid fa-eye-slash" style="cursor: pointer; margin:auto;"></i>
+                            <i class="fa-solid fa-eye-slash" style="cursor: pointer; margin:auto;" ></i>
                         </span>
                     </div>
                      
                     </div> 
                  
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                       <label for="inputRole" class="form-label">Role</label>
-                      <select id="inputRole" class="form-select">
-                        <option selected>Choose...</option>
+                      <select id="inputRole" class="form-select" name="role" required  >
+                        <option selected value="">Choose...</option>
                         <option>Student</option>
                         <option>Teacher</option>
                         <option>Parents</option>
                         <option>Others</option>
                       </select>
                     </div>
-                    <div class="col-md-8" style="margin-top: 55px;  ">
+
+
+                    <div class="col-md-8" style=" ">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <input class="form-check-input accent" type="checkbox" id="gridCheck"  bind:checked={checked} 
+                          on:change={
+                            (e) => {
+                              checked = e.target.checked;
+                              console.log(checked);
+                            }
+                          }>
+                          <input type="hidden" name="sendupdates" value={checked} />
                           <label class="form-check-label" for="gridCheck">
                             receive notifications & updates 
                           </label>
                         </div>
                       </div>
                   
-                    <div class="col-12" style="margin-top: 50px;">
+                    <div class="col-12" style="margin-top: 30px;">
                       <button type="submit" class="btn btn-success" style="width: 100%; padding:15px;">Sign up</button>
                     </div>
                   </form>
 
-            </form>
+            
          </div>  
 
     </div>
@@ -155,5 +170,14 @@ form i {
         width: 55%;
         padding: 50px;
     }
+
+    .accent{
+      accent-color: green !important;
+    }
+
+    input[type='checkbox'] {
+      accent-color: green !important;
+}
+
 
 </style>

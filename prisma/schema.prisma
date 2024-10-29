@@ -11,45 +11,51 @@ datasource db {
 }
 
 model Essay {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  name   String
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  name        String
   description String
-  image_url String
+  image_url   String
 }
 
-model Edu_content{
+model Edu_content {
+  id        Int          @id @default(autoincrement())
+  createdAt DateTime     @default(now())
+  title     String
+  link      String
+  image     String
+  content   String
+  category  Categories[] @relation(name: "content")
+  likes     Int          @default(0)
+}
+
+model Categories {
+  id        Int           @id @default(autoincrement())
+  createdAt DateTime      @default(now())
+  name      String        @unique
+  content   Edu_content[] @relation(name: "content")
+}
+
+model Quiz {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  title   String
-  link String
-  image String
-  content String
-  category Categories[] @relation(name: "content")
-  likes Int @default(0)
- 
-  
+  title     String
+  url       String
+  setActive Boolean  @default(false)
 }
 
-
-model Categories{
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  name   String @unique
-  content     Edu_content[]      @relation(name: "content")
+model AlertMessage {
+  id      Int    @id @default(autoincrement())
+  message String
 }
 
-model Quiz{
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  title   String
-  url  String
-  setActive Boolean @default(false)
-  
-}
-
-model AlertMessage{
-  id        Int      @id @default(autoincrement())
-  message String 
-
+model User {
+  id                   Int      @id @default(autoincrement())
+  JoinedAt             DateTime @default(now())
+  name                 String
+  email                String
+  username             String   @unique
+  password             String
+  role                 String
+  recieveNotifications Boolean
 }
