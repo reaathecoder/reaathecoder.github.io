@@ -33,16 +33,17 @@
         </div>
 
         <div class="form container">
-            <form use:enhance method="post" action="?/login">
+            <form>
 
               <h2 class="text-success" style="margin-bottom: 30px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Log in</h2>
-                <form class="row g-3">
+                <form class="row g-3"  method="post" action="?/login" use:enhance>
 
                    
-                  
+               
                     <div class="col-12">
                       <label for="inputUsername" class="form-label">Username</label>
-                      <input type="text" class="form-control" id="inputUsername" placeholder="">
+                      <input type="text" class="form-control" id="inputUsername" placeholder="" name="username" value={data.user?
+                      data.user.username: ""} required>
                     </div>
                  
                     <div class="col-12">

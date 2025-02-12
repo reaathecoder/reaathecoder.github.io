@@ -2,6 +2,8 @@
 import { prisma } from '$lib';
 import { fail } from '@sveltejs/kit';
 import { redirect } from '@sveltejs/kit';
+import * as crypto from "node:crypto";
+
 
 
 
@@ -11,6 +13,14 @@ export async function load() {
     return {users};
 };
 
+function hashPassword(password) {
+    const salt = crypto.randomBytes(16).toString('hex');
+    const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, 'sha512').toString('hex');
+    return { salt, hash };
+  }
+
+
+  
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -24,6 +34,7 @@ export const actions = {
         let role = form.get("role")?.toString()
         let recieveNotifications = Boolean(form.get("sendupdates"))
 
+        const { salt, hash } = hashPassword(password);
 
        
 
@@ -54,7 +65,8 @@ export const actions = {
             name,
             email,
             username,
-            password,
+            salt,
+            hash, 
             role,
             recieveNotifications
         }})

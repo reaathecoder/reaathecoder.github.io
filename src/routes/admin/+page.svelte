@@ -7,7 +7,7 @@
         {name: "Quiz", url: "/admin-quiz", setActive: false},
         {name: "Essays", url: "/admin-essays", setActive: false},
         {name: "Videos", url: "/admin-videos" , setActive: false},
-        {name: "About me", url: "/admin-videos" , setActive: false},
+        {name: "About me", url: "/admin-about-me" , setActive: false},
         {name: "Education Content", url: "/admin-videos" , setActive: false},
 
     ]

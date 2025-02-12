@@ -55,7 +55,52 @@ model User {
   name                 String
   email                String
   username             String   @unique
-  password             String
+  salt                 String
+  hash                 String
   role                 String
   recieveNotifications Boolean
+}
+
+
+model Cv {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  name          String
+  Image         String
+  Description   String
+  Introduction  String
+  Education     Education[] @relation(name: "Education")
+  researchList  Research[] @relation(name: "Researches")
+  Experience    Experience[] @relation(name: "Experience")
+}
+
+
+model Research {
+  id        Int      @id @default(autoincrement())
+  Researches   Cv[] @relation(name: "Researches")
+  title     String
+  link      String
+  image     String
+  content   String
+  file      String
+}
+
+model Experience {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  Experience   Cv[] @relation(name: "Experience")
+  title     String
+  link      String
+  image     String
+  content   String
+}
+
+model Education {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  Education   Cv[] @relation(name: "Education")
+  title     String
+  link      String
+  image     String
+  content   String
 }
